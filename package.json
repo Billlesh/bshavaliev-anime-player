@@ -1,0 +1,24 @@
+{
+  "name": "anime-player",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Windows anime player: play original immediately, preprocess to QHD 60 FPS in the background, switch to NVENC cache.",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "tauri": "tauri",
+    "test:python": "python3 -m unittest discover -s pipeline/tests -p 'test_*.py' -v",
+    "test:core": "cargo test --manifest-path crates/player-core/Cargo.toml"
+  },
+  "dependencies": {
+    "@tauri-apps/api": "2.12.4",
+    "@tauri-apps/plugin-dialog": "2.8.3"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "2.12.4",
+    "typescript": "~5.8.3",
+    "vite": "^6.3.5"
+  }
+}

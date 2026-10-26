@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anime Player</title>
+    <link rel="stylesheet" href="/src/styles.css" />
+  </head>
+  <body>
+    <div id="app">
+      <header class="chrome">
+        <div class="brand">
+          <span class="mark" aria-hidden="true"></span>
+          <h1>Anime Player</h1>
+        </div>
+        <div class="controls" role="toolbar">
+          <button type="button" id="btn-open">Open file</button>
+          <button type="button" id="btn-folder">Open folder</button>
+          <button type="button" id="btn-pp" disabled>Play</button>
+          <label class="toggle">
+            <input type="checkbox" id="shaders" checked />
+            Shaders
+          </label>
+          <span id="source-badge" class="badge" data-kind="none">idle</span>
+        </div>
+      </header>
+
+      <section id="now-playing" class="now">
+        <p class="muted">Open a file or folder. Original plays immediately; QHD 60 FPS cache replaces it when ready.</p>
+      </section>
+
+      <section class="queue-wrap">
+        <div class="queue-head">
+          <h2>Queue</h2>
+          <p id="queue-hint" class="muted">One GPU job at a time · RIFE FP16 → Real-ESRGAN anime → NVENC HEVC</p>
+        </div>
+        <ul id="queue"></ul>
+      </section>
+
+      <footer id="env" class="env" hidden></footer>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
